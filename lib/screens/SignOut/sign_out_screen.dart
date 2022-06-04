@@ -1,3 +1,4 @@
+import 'package:bitcoin_price/screens/Home/home_screen.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -76,7 +77,14 @@ class SignOutScreen extends StatelessWidget {
                   ),
                   Center(
                     child: DefaultButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const HomeScreen(),
+                          ),
+                        );
+                      },
                       text: 'Criar conta',
                     ),
                   ),
