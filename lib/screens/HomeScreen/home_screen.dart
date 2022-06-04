@@ -1,6 +1,8 @@
+import 'package:bitcoin_price/screens/SigninScreen/signin_screen.dart';
+import 'package:bitcoin_price/utils/constants.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-
+import 'package:google_fonts/google_fonts.dart';
 import '../SignOutScreen/sign_out_screen.dart';
 import 'components/default_button.dart';
 
@@ -15,12 +17,9 @@ class HomeScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(height: MediaQuery.of(context).size.height * 0.05),
-            const Text(
+            Text(
               'Bem-vindo ao futuro!',
-              style: TextStyle(
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
-              ),
+              style: TextStylesConstants.kDefaultTextFieldStyleHome,
             ),
             Image.asset(
               'lib/assets/images/simon-lee-hbFKxsIqclc-unsplash.png',
@@ -40,22 +39,22 @@ class HomeScreen extends StatelessWidget {
             SizedBox(height: MediaQuery.of(context).size.height * 0.01),
             RichText(
               text: TextSpan(
-                style: const TextStyle(
-                  fontSize: 18,
-                  color: Colors.black,
-                ),
+                style: TextStylesConstants.kDefaultTextFieldStyle,
                 text: 'Você já tem uma conta? ',
                 children: [
                   TextSpan(
                     text: 'Faça login',
-                    style: const TextStyle(
-                      fontSize: 18,
-                      color: Colors.black,
-                      fontFamily: 'Metropolis-Regular',
-                      decoration: TextDecoration.underline,
-                    ),
-                    recognizer: TapGestureRecognizer()..onTap = () {},
-                  )
+                    style: TextStylesConstants.kDefaultTextFieldStyleBold,
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SignInScreen(),
+                          ),
+                        );
+                      },
+                  ),
                 ],
               ),
             ),

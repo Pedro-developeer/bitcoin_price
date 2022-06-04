@@ -3,10 +3,10 @@ import 'package:bitcoin_price/utils/constants.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'components/defaut_text_field.dart';
+import '../SignOutScreen/components/defaut_text_field.dart';
 
-class SignOutScreen extends StatelessWidget {
-  const SignOutScreen({Key? key}) : super(key: key);
+class SignInScreen extends StatelessWidget {
+  const SignInScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -78,9 +78,6 @@ class SignOutScreen extends StatelessWidget {
                     onPressed: () {},
                     text: 'Criar conta',
                   ),
-                ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.01,
                 ),
                 Center(
                   child: RichText(
