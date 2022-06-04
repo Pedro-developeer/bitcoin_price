@@ -1,12 +1,14 @@
-import 'package:bitcoin_price/screens/HomeScreen/components/default_button.dart';
 import 'package:bitcoin_price/utils/constants.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'components/defaut_text_field.dart';
 
-class SignOutScreen extends StatelessWidget {
-  const SignOutScreen({Key? key}) : super(key: key);
+import '../SignOut/components/defaut_text_field.dart';
+import '../Welcome/components/default_button.dart';
+
+
+class SignInScreen extends StatelessWidget {
+  const SignInScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -48,19 +50,6 @@ class SignOutScreen extends StatelessWidget {
                   height: MediaQuery.of(context).size.height * 0.03,
                 ),
                 Text(
-                  "Senha",
-                  style: TextStylesConstants.kDefaultTextFieldStyle,
-                ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.01,
-                ),
-                DefautTextField(
-                  onChanged: (value) => {},
-                ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.03,
-                ),
-                Text(
                   "Confirmar Senha",
                   style: TextStylesConstants.kDefaultTextFieldStyle,
                 ),
@@ -76,20 +65,17 @@ class SignOutScreen extends StatelessWidget {
                 Center(
                   child: DefaultButton(
                     onPressed: () {},
-                    text: 'Criar conta',
+                    text: 'Entrar',
                   ),
-                ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.01,
                 ),
                 Center(
                   child: RichText(
                     text: TextSpan(
                       style: TextStylesConstants.kDefaultTextFieldStyle,
-                      text: 'Você já tem uma conta? ',
+                      text: 'Você já não temuma conta? ',
                       children: [
                         TextSpan(
-                          text: 'Faça login',
+                          text: 'Cadastra-se',
                           style: TextStylesConstants.kDefaultTextFieldStyleBold,
                           recognizer: TapGestureRecognizer()..onTap = () {},
                         ),

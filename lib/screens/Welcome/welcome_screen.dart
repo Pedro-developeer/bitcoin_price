@@ -1,13 +1,12 @@
-import 'package:bitcoin_price/screens/SigninScreen/signin_screen.dart';
 import 'package:bitcoin_price/utils/constants.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../SignOutScreen/sign_out_screen.dart';
+import '../SignOut/sign_out_screen.dart';
 import 'components/default_button.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class WelcomeScreen extends StatelessWidget {
+  const WelcomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +49,7 @@ class HomeScreen extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const SignInScreen(),
+                            builder: (context) => const SignOutScreen(),
                           ),
                         );
                       },
