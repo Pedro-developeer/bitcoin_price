@@ -58,6 +58,7 @@ class SignOutScreen extends StatelessWidget {
                   ),
                   DefautTextField(
                     onChanged: (value) => {},
+                    
                   ),
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.03,

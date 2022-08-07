@@ -1,31 +1,45 @@
 import 'package:bitcoin_price/utils/constants.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class DefautTextField extends StatelessWidget {
-  const DefautTextField({
+  DefautTextField({
     Key? key,
     this.onChanged,
+    this.hintText,
+    this.suffixIcon,
+    this.keyboardType,
   }) : super(key: key);
+
   final void Function(String)? onChanged;
+  String? hintText;
+  Widget? suffixIcon;
+  TextInputType? keyboardType;
+
   @override
   Widget build(BuildContext context) {
     return TextField(
       onChanged: onChanged,
-      keyboardType: TextInputType.number,
+      keyboardType: keyboardType,
       decoration: InputDecoration(
+        hintText: hintText,
+        hintStyle: TextStylesConstants.kDefaultTextFieldStyleGray,
         filled: true, // dont forget
-        focusedBorder: const OutlineInputBorder(
-          borderSide: BorderSide(
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(13),
+          borderSide: const BorderSide(
             color: Constants.kWhiteStokerColor,
             width: 2,
           ),
         ),
+        suffixIcon: suffixIcon,
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10.0),
+          borderRadius: BorderRadius.circular(18.0),
         ),
         fillColor: Constants.kWhiteFillColor,
-        enabledBorder: const OutlineInputBorder(
-          borderSide: BorderSide(
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(13),
+          borderSide: const BorderSide(
             color: Constants.kWhiteStokerColor,
             width: 2,
           ),

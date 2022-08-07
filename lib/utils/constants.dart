@@ -7,6 +7,8 @@ class Constants {
   static const kLightGrey = Color(0XFF838383);
   static const kWhiteFillColor = Color(0XFFF5F5F5);
   static const kWhiteStokerColor = Color(0XFFE3E3E3);
+  static const kPinkContainer = Color(0XFFE8B3EB);
+  static const kGrayContainer = Color(0XFFF3F3F3);
 }
 
 class TextStylesConstants {
@@ -14,6 +16,12 @@ class TextStylesConstants {
     fontSize: 16,
     fontWeight: FontWeight.normal,
     color: Constants.kBlack,
+  );
+
+  static TextStyle kDefaultTextFieldStyleGray = GoogleFonts.inter(
+    fontSize: 16,
+    fontWeight: FontWeight.normal,
+    color: Constants.kLightGrey,
   );
 
   static TextStyle kDefaultHomeScreen = GoogleFonts.inter(
@@ -41,7 +49,7 @@ class TextStylesConstants {
   );
 
   static TextStyle kDefaultTextFieldStyleWhite = GoogleFonts.inter(
-    fontSize: 15,
+    fontSize: 18,
     fontWeight: FontWeight.bold,
     color: Constants.kWhite,
   );
