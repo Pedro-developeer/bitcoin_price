@@ -19,9 +19,25 @@ class TextStylesConstants {
   );
 
   static TextStyle kDefaultTextFieldStyleGray = GoogleFonts.inter(
-    fontSize: 16,
+    fontSize: 15,
     fontWeight: FontWeight.normal,
     color: Constants.kLightGrey,
+  );
+  static TextStyle kDefaultTextFieldStyleGraySmall = GoogleFonts.inter(
+    fontSize: 12,
+    fontWeight: FontWeight.normal,
+    color: Constants.kLightGrey,
+  );
+  static TextStyle kDefaultTextFieldStyleGreeSmall = GoogleFonts.inter(
+    fontSize: 12,
+    fontWeight: FontWeight.bold,
+    color: Colors.green,
+  );
+
+  static TextStyle kDefaultTextFieldStyleRedSmall = GoogleFonts.inter(
+    fontSize: 12,
+    fontWeight: FontWeight.bold,
+    color: Colors.redAccent,
   );
 
   static TextStyle kDefaultHomeScreen = GoogleFonts.inter(
@@ -37,7 +53,7 @@ class TextStylesConstants {
   );
 
   static TextStyle kDefaultTextFieldStyleHomeBold = GoogleFonts.inter(
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: FontWeight.bold,
     color: Colors.black,
   );

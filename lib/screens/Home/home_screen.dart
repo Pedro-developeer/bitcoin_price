@@ -1,7 +1,5 @@
 import 'package:bitcoin_price/models/home_model.dart';
-import 'package:bitcoin_price/screens/Home/components/button_card_favorite.dart';
-import 'package:bitcoin_price/screens/Home/components/notice_card.dart';
-import 'package:bitcoin_price/services/requests/bitcoin_rquest.dart';
+import 'package:bitcoin_price/screens/Home/components/crypto_card.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../utils/constants.dart';
@@ -70,93 +68,29 @@ class _HomeScreenState extends State<HomeScreen> {
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.05,
                   ),
-                  DefautTextField(
-                    suffixIcon: const Icon(
-                      Icons.search,
-                      color: Constants.kLightGrey,
-                      size: 30,
-                    ),
-                    hintText: "Pesquise por alguma criptomoeda",
-                    onChanged: (value) => {},
-                  ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.02,
-                      ),
-                      Text(
-                        "Moedas favoritas",
-                        style:
-                            TextStylesConstants.kDefaultTextFieldStyleHomeBold,
-                      ),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.02,
-                      ),
-                      Container(
-                        height: 250,
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                          color: Constants.kPinkContainer,
-                          borderRadius: BorderRadius.circular(20),
+                  state.isLoading
+                      ? ListView.builder(
+                          physics: const BouncingScrollPhysics(),
+                          scrollDirection: Axis.vertical,
+                          shrinkWrap: true,
+                          itemCount: state.listaBitcoin.length,
+                          itemBuilder: (context, index) {
+                            return CardBitcoinPrices(
+                              cryptoName: state.listaBitcoin[index].name,
+                              sigla: state.listaBitcoin[index].symbol,
+                              cryptoImage: state.listaBitcoin[index].image,
+                              cryptoPriceCorrent:
+                                  state.listaBitcoin[index].currentPrice,
+                              cryptoPrice:
+                                  state.listaBitcoin[index].priceChange24h,
+                              cryptoPricePercent: state
+                                  .listaBitcoin[index].priceChangePercentage24h,
+                            );
+                          },
+                        )
+                      : const CircularProgressIndicator(
+                          color: Constants.kBlack,
                         ),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 30, horizontal: 20),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "Todas as moedas que \nvocê favoritar vão \naparecer aqui",
-                                    style: TextStylesConstants
-                                        .kDefaultTextFieldStyleWhite,
-                                  ),
-                                  ButtonCardFavorite(
-                                    onPressed: () {},
-                                  )
-                                ],
-                              ),
-                              Flexible(
-                                child: Center(
-                                  child: Image.asset(
-                                    "lib/assets/images/Bitcoin_perspective_matte.png",
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.02,
-                      ),
-                      Text(
-                        "Últimas noticias",
-                        style:
-                            TextStylesConstants.kDefaultTextFieldStyleHomeBold,
-                      ),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.02,
-                      ),
-                      ListView(
-                        scrollDirection: Axis.vertical,
-                        shrinkWrap: true,
-                        physics: const NeverScrollableScrollPhysics(),
-                        children: [
-                          NoticCard(),
-                          NoticCard(),
-                          NoticCard(),
-                        ],
-                      )
-                    ],
-                  )
                 ],
               ),
             ),

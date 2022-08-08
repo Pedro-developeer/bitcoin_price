@@ -1,23 +1,23 @@
-class BitcoinObjetct {
+class BitcoinObject {
   String? id;
   String? symbol;
   String? name;
   String? image;
-  int? currentPrice;
+  dynamic currentPrice;
   int? marketCap;
   int? marketCapRank;
   int? fullyDilutedValuation;
-  int? totalVolume;
-  int? high24h;
-  int? low24h;
+  dynamic totalVolume;
+  dynamic high24h;
+  dynamic low24h;
   double? priceChange24h;
   double? priceChangePercentage24h;
-  double? marketCapChange24h;
+  dynamic marketCapChange24h;
   double? marketCapChangePercentage24h;
   double? circulatingSupply;
   double? totalSupply;
   double? maxSupply;
-  int? ath;
+  dynamic ath;
   double? athChangePercentage;
   String? athDate;
   double? atl;
@@ -26,7 +26,7 @@ class BitcoinObjetct {
   dynamic roi;
   String? lastUpdated;
 
-  BitcoinObjetct(
+  BitcoinObject(
       {this.id,
       this.symbol,
       this.name,
@@ -54,7 +54,7 @@ class BitcoinObjetct {
       this.roi,
       this.lastUpdated});
 
-  BitcoinObjetct.fromJson(Map<String, dynamic> json) {
+  BitcoinObject.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     symbol = json['symbol'];
     name = json['name'];
