@@ -1,9 +1,9 @@
 import 'package:bitcoin_price/models/home_model.dart';
 import 'package:bitcoin_price/screens/Home/components/crypto_card.dart';
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../utils/constants.dart';
-import '../SignOut/components/defaut_text_field.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -19,6 +19,8 @@ class _HomeScreenState extends State<HomeScreen> {
     HomeModel.of(context).primeiraChamada();
   }
 
+  final List<Color> gradientColors = [Constants.kBlack, Constants.kLightGrey];
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -31,40 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                            height: MediaQuery.of(context).size.height * 0.05,
-                          ),
-                          Text(
-                            "Bem-vindo(a) de volta!",
-                            style: TextStylesConstants
-                                .kDefaultTextFieldStyleHomeBold,
-                          ),
-                          Text(
-                            "Nós separamos as melhores notícias\nsobre Bitcoin e Etherum para você.",
-                            style: TextStylesConstants.kDefaultHomeScreen,
-                          ),
-                        ],
-                      ),
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(50),
-                        child: CircleAvatar(
-                          radius: 30,
-                          child: Image.asset(
-                            "lib/assets/images/astro.jpeg",
-                            fit: BoxFit.fill,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+                  const SizedBox(height: 20),
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.05,
                   ),
@@ -88,9 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             );
                           },
                         )
-                      : const CircularProgressIndicator(
-                          color: Constants.kBlack,
-                        ),
+                      : Container(),
                 ],
               ),
             ),

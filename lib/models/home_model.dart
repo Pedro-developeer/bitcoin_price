@@ -1,5 +1,5 @@
 import 'package:bitcoin_price/services/objects/bitcoin_prices.dart';
-import 'package:bitcoin_price/services/requests/bitcoin_rquest.dart';
+import 'package:bitcoin_price/services/requests/bitcoin_request.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

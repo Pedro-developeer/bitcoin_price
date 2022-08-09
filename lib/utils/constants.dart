@@ -18,6 +18,12 @@ class TextStylesConstants {
     color: Constants.kBlack,
   );
 
+  static TextStyle kDefaultHome= GoogleFonts.inter(
+    fontSize: 25,
+    fontWeight: FontWeight.normal,
+    color: Constants.kBlack,
+  );
+
   static TextStyle kDefaultTextFieldStyleGray = GoogleFonts.inter(
     fontSize: 15,
     fontWeight: FontWeight.normal,
